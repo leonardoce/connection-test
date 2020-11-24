@@ -1,0 +1,18 @@
+{% func IndexPage(connectionString string, result string) %}
+<html lang="en">
+    <body>
+        <h1>Connection test</h1>
+        <form action="connection_test" method="post">
+            <label>
+                Connection string
+                <input type="text" name="connection_string" value="{%s connectionString %}" size="80">
+            </label>
+            <input type="submit">
+        </form>
+
+        {% if result != "" %}
+            <h1>Status: {%s result %}</h1>
+        {% endif %}
+    </body>
+</html>
+{% endfunc %}
